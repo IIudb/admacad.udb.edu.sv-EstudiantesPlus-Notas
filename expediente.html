@@ -1,0 +1,1305 @@
+﻿
+<!DOCTYPE html>
+<html lang="es-sv" class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente - Estudiantes</title>
+    <link rel="shortcut icon" href="https://admacad.udb.edu.sv/Recursos/imagenes/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://admacad.udb.edu.sv/Recursos/css/smart_wizard_all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://admacad.udb.edu.sv/Recursos/udbestudiantes.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/css/fileinput.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/themes/explorer-fas/theme.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://admacad.udb.edu.sv/Recursos/plugins/fullcalendarV5/main.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://admacad.udb.edu.sv/Recursos/css/animate.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap-tour/css/bs5-tour.css" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://admacad.udb.edu.sv/Recursos/plugins/quill/1.3.6/css/quill.snow.css" crossorigin="anonymous">
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/EstudiantesPlus/Scripts/jquery.signalR-2.4.2.min.js"></script>
+    <script src="/EstudiantesPlus/signalr/hubs"></script>
+    <!--DataTable-->
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/dataTables.rowGroup.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.1.2/js/dataTables.rowGroup.min.js" type="text/javascript"></script>
+    <!--UDB-->
+    <script src="https://admacad.udb.edu.sv/Recursos/js/constantes.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/chosen-js/chosen.jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/chosen-readonly/dist/chosen-readonly.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/moment.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/bootstrap-datetimepicker.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/jquery.unobtrusive-ajax.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/UTL.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/jquery.smartwizard5.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap-tour/js/bs5-tour.js"></script>
+    <!--bootstrap-fileinput-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/js/fileinput.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/js/locales/es.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/themes/fas/theme.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/themes/explorer-fas/theme.min.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/js/imask.min.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/fullcalendarV5/main.min.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/fullcalendarV5/locales-all.min.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/quill/1.3.6//js/quill.js" type="text/javascript"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap-notify/3.1.3/bootstrap-notify.js" type="text/javascript"></script>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+    <script>
+        var VistaCarritoEstudiantePlus = "";  //Vista de recarga de registros vinculado al carrito
+    </script>
+    <style>
+        /* rows */
+        div.dropdown-multicol {
+            width: 25em;
+        }
+
+        div.dropdown-row > a.dropdown-item {
+            display: inline-block;
+            width: 32%;
+        }
+
+        /* Columns */
+        div.dropdown-multicol2 {
+            width: 30em;
+        }
+
+            div.dropdown-multicol2 > div.dropdown-col {
+                display: inline-block;
+                width: 32%;
+            }
+    </style>
+</head>
+<body class="Estudiantes d-flex flex-column h-100">
+
+    <main role="main" class="flex-shrink-0 mb-3">
+        
+
+<nav class="navbar navbar-menu navbar-expand-lg fixed-top navbar-light bg-estudiantes ps-3 pe-3">
+
+    <a class="navbar-brand text-white" href="https://admacadudbedusv.github.io/inicio/"><strong>Estudiantes</strong></a>
+
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav ms-auto d-lg-flex" style="color:white">
+            
+            <li class="nav-item" id="liCarrito">
+                <a class="nav-link p2" data-bs-toggle="offcanvas" href="#offcanvasCarrito" role="button" aria-controls="offcanvasCarrito">
+                    <i class="fas fa-shopping-cart fa-inverse fa-lg" aria-hidden='true' data-bs-toggle="offcanvas" href="#offcanvasCarrito"></i>
+                    <span id="tbCantCarrito" class="badge pill-rounded bg-warning" data-bs-toggle="offcanvas" href="#offcanvasCarrito"></span>
+                </a>
+            </li>
+            
+            <li class="nav-item dropdown" >
+    <a class="nav-link dropdown-toggle text-white" id="DDlMenu" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-th fa-inverse "></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end dropdown-multicol ps-2" aria-labelledby="DDlMenu" style="background-color: #faf7f7; ">
+        <div class="dropdown-row">
+            <a class="dropdown-item" href="/EstudiantesPlus/EDEvaluacionDocente">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-chalkboard-teacher "></i>
+                    </span>
+                    <div>
+                        <small>Evaluación</small><br />
+                        <small>Docente</small>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/HorasSociales">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-people-carry"></i>
+                    </span>
+                    <div>
+                        <small>Servicio<br /> Social</small>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/PCPlanificaciones">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-clipboard-list"></i>
+                    </span>
+                    <div>
+                        <small>Planificacion<br />Módulos</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="dropdown-row">
+            <a class="dropdown-item" href="/EstudiantesPlus/ProcedimientosAcademicos">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-address-card"></i>
+                    </span>
+                    <div>
+                        <small>
+                            Procedimientos<br />
+                            Académicos
+                        </small>
+                    </div>
+                </div>
+
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/ApelacionCuota">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-user-shield"></i>
+                    </span>
+                    <div>
+                        <small>
+                            Apelación<br />
+                            de Couta
+                        </small>
+                    </div>
+                </div>
+
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/CuartaMatricula">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    <div>
+                        <small>
+                            4a<br />
+                            Matrícula
+                        </small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="dropdown-row">
+            <a class="dropdown-item" href="/EstudiantesPlus/DocumentosLinea">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-mail-bulk"></i>
+                    </span>
+                    <div>
+                        <small>
+                            Documentos<br />
+                            en Línea
+                        </small>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/ACADProcesoGraduacion">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </span>
+                    <div>
+                        <small>
+                            Proceso de<br />
+                            Graduación
+                        </small>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/Tickets">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-bug"></i>
+                    </span>
+                    <div>
+                        <small>
+                            Ticket<br />
+                            &nbsp;
+                        </small>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/SPPInforme/InformeCIVU" style="text-decoration:none;">
+
+                <div class="text-center mb-1 ">
+                    <span class="p-1" style="font-size: 3em; color: #0D6EFD;">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </span>
+                    <div>
+                        <small class="text-wrap">
+                            Perfil Psicopedagógico
+                        </small>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="/EstudiantesPlus/PerfilHoraVinculacion">
+                <div class="text-center mb-1">
+                    <span class="p-1" style="font-size: 2em; color: #0D6EFD;">
+                        <i class="fas fa-handshake"></i>
+                    </span>
+                    <div>
+                        <small>Horas de<br/> Vinculación </small>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</li>
+
+            
+            <li class="nav-item" id="liNotificaciones">
+                <a class="nav-link p-2" href="#modalNotificaciones" data-bs-toggle="modal" onclick="modal()">
+                    <i class="far fa-bell fa-inverse"></i>
+                    <span id="txtR" class="badge pill-rounded bg-danger badge-notificacion" title="Sin ver"></span>
+                    <span id="txtP" class="badge pill-rounded bg-warning badge-notificacionPendientes" title="Sin ejecutar"></span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white p-1" href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="141245.jpeg" alt="" class="rounded-circle" style="width: 30px; height: 35px" />
+                            SG231572
+                        </a>
+
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="https://admacad.udb.edu.sv/publico/CambiarContraseña?url=https%3a%2f%2fadmacad.udb.edu.sv%2fEstudiantesPlus%2fExpediente" class="dropdown-item"><i class="fas fa-key"></i> Cambiar Contraseña</a>
+                    <hr />
+                    <a class="dropdown-item" href="/EstudiantesPlus/Login/Logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+        <div class="container">
+            
+
+
+<h1 class="text-center mb-3">Expediente</h1>
+
+
+<style>
+    .row.highlight:hover {
+        background-color: lightgrey;
+    }
+
+    .row.highlight.active {
+        background-color: lightgray;
+    }
+
+    .row.highlight:hover {
+        cursor: default;
+    }
+
+    #_FichaAlumno_TBLCarreras .active {
+        background-color: #D3D3D3;
+    }
+
+</style>
+
+<div class="card card-udb mb-3">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-lg-2 col-md-12 cubo2 text-center">
+                <img src="141245.jpeg" alt="profile-image" class="rounded-circle" style="max-width: 100px; max-height: 100px; border-radius: 50%; border: 2px solid white; box-shadow: 3px 3px 20px rgb(0 0 0 / 50%);" />
+            </div>
+            <div class="col-lg-10 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <small>Estudiante</small>
+                                <h5>
+                                    [SG231572] Ayleen Tatiana
+                                    Santos Garc&#237;a
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="w-100 table-responsive">
+                                <table id="_FichaAlumno_TBLCarreras" class="w-100 p-0" style="border-collapse: separate; border-spacing: 0 3px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight:normal">Carrera</th>
+                                            <th style="font-weight:normal">Plan</th>
+                                            <th style="font-weight:normal">Programa</th>
+                                            <th style="font-weight:normal">Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr data-carrera="104" data-plan="2023" class="highlight carrera active">
+                                                <td style="font-weight: 500">[104] Ingenier&#237;a en Ciencias de la Computaci&#243;n</td>
+                                                <td style="font-weight: 500 ">2023</td>
+                                                <td valign="middle" style="font-weight: 500 ">UDB</td>
+                                                <td valign="middle" style="font-weight: 500 ">ACTIVO</td>
+                                                <td valign="middle" style="font-weight: 500 ">
+                                                        <button class="btn btn-ver-udb" aria-hidden="true" data-bs-toggle="tooltip" title="Ver" onclick="ActualizarExpediente(104, 2023)"><i class="fas fa-binoculars"></i></button>
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="divExpediente">
+    <div class="card card-udb mt-3">
+    <div class="card-header">
+        <h3>
+            Ingenier&#237;a en Ciencias de la Computaci&#243;n                                                  
+        </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                        <div class="card text-white bg-success mb-3 text-center">
+                            <div class="card-header">
+                                <h1>
+                                    <span id="LBLAprobadas">4</span>
+                                </h1>
+                            </div>
+                            <div class="card-footer">
+                                <small>APROBADAS</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                        <div class="card text-white bg-danger mb-3 text-center">
+                            <div class="card-header">
+                                <h1>
+                                    <span id="LBLReprobadas">0</span>
+                                </h1>
+                            </div>
+                            <div class="card-footer">
+                                <small>REPROBADAS</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                        <div class="card text-white bg-warning mb-3 text-center">
+                            <div class="card-header">
+                                <h1>
+                                    <span id="LBLRetiradas">1</span>
+                                </h1>
+                            </div>
+                            <div class="card-footer">
+                                <small>RETIRADAS</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12 text-center">
+                        <div class="card card-udb mb-3">
+                            <div class="card-header">
+                                <h1>
+                                    <span id="LBLEquivalencia">0</span>
+                                </h1>
+                            </div>
+                            <div class="card-footer px-2">
+                                <small>EQUIVALENCIAS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="card card-udb mb-3">
+                    <div class="card-header">
+                        <h1>
+                            <b><span id="LBLPorcentaje">5.3%</span></b>
+                        </h1>
+                    </div>
+                    <div class="card-footer">
+                        <small>PORCENTAJE DE AVANCE</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table text-center table-bordered table-udb">
+                <tr>
+                    <th class="text-center">Ciclo Ingreso:</th>
+                    <th class="text-center">Nota Promedio: </th>
+                    <th class="text-center">CUM:</th>
+                    <th class="text-center">U.V. Ganadas:</th>
+                    <th class="text-center">Máximo U.V.: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>
+                            <span id="LBLCicloIngreso">01 2022</span>
+                        </h5>
+                    </td>
+                    <td>
+                        <h5>
+                            <span id="LBLNotaPromedio">8.02</span>
+                        </h5>
+                    </td>
+                    <td>
+                        <h5>
+                            <span id="LBLCUM">8.0</span>
+                        </h5>
+                    </td>
+                    <td>
+                        <h5>
+                            <span id="LBLUVGanadas">15</span>
+                        </h5>
+                    </td>
+                    <td>
+                        <h5>
+                            <span id="LBLMaxUV">32</span>
+                        </h5>
+                    </td>
+                </tr>
+            </table>            
+        </div>
+
+    </div>
+</div>  
+</div>
+
+<div id="divProcesoGraduacion">
+    
+</div>
+
+
+<div id="divRequisitos" data-section="Requisitos">
+    
+</div>
+
+
+<div id="divConsolidadoAsignaturas">
+        <div class="card card-udb mt-3" id="divConsolidadoAsignaturas">
+        <div class="card-header">
+            <h4>Consolidado de Materias</h4>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-udb table-bordered mb-0">
+                <thead>
+                    <tr>
+                        <th>A&ntilde;o</th>
+                        <th>Ciclo</th>
+                        <th>C&oacute;digo</th>
+                        <th>Asignatura</th>
+                        <th>Mat.</th>
+                        <th>Nota</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td class="text-center">2023</td>
+                            <td class="text-center">01</td>
+                            <td>ALG501</td>
+                            <td>&#193;lgebra Vectorial y Matrices</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">0.0</td>
+                            <td>Retirada</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2023</td>
+                            <td class="text-center">01</td>
+                            <td>ANF231</td>
+                            <td>Antropolog&#237;a Filos&#243;fica</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">8.5</td>
+                            <td>Reprobada</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2023</td>
+                            <td class="text-center">01</td>
+                            <td>CAD501</td>
+                            <td>C&#225;lculo Diferencial</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">6.8</td>
+                            <td>Reprobada</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2023</td>
+                            <td class="text-center">01</td>
+                            <td>PRE104</td>
+                            <td>Programaci&#243;n Estructurada</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">9.1</td>
+                            <td>Aprobada</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2023</td>
+                            <td class="text-center">01</td>
+                            <td>QUG501</td>
+                            <td>Qu&#237;mica General</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">7.7</td>
+                            <td>Reprobada</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>        
+    </div>
+
+</div>
+
+
+        </div>
+    </main>
+
+    <div class="card" style="background-color: #ebebec">
+        <div class="card-header">
+            <div class="row mb-4 mt-4">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-2">
+                    <img src="UDB_negras.png" class="img-fluid" />
+                </div>
+                <div class="col-lg-2">
+                    <h4>Redes Sociales</h4>
+
+                    <div class="mb-2">
+                        <a href="https://www.facebook.com/UDBelsalvador/" style="text-decoration:none" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a><br />
+                    </div>
+                    <div class="mb-2">
+                        <a href="https://twitter.com/UDBElsalvador" style="text-decoration:none" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a><br />
+                    </div>
+                    <div class="mb-2">
+
+                        <a href="https://www.youtube.com/channel/UCO702u8hWJ4608D4Q40CHzA" style="text-decoration:none" class="mb-5" target="_blank"><i class="fab fa-youtube-square"></i> Youtube</a><br />
+                    </div>
+                    <div class="mb-2">
+                        <a href="https://www.instagram.com/udbelsalvador/" style="text-decoration:none" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h4>Enlaces de Interes</h4>
+
+                    <div class="mb-2"><a href="http://udb.edu.sv/" style="text-decoration:none" target="_blank"><i class="fas fa-globe"></i> Sitio WEB oficial</a></div>
+                    <div class="mb-2"><a href="https://www.udbvirtual.edu.sv/auladigital/login/index.php" style="text-decoration:none" target="_blank"><i class="fas fa-chalkboard-teacher"></i> Aula Virtual</a></div>
+                    <div class="mb-2"><a href="https://play.google.com/store/apps/details?id=sv.edu.udb.estudiantes&hl=es" style="text-decoration:none" target="_blank"><i class="fas fa-mobile-alt"></i> APP UDB</a></div>
+
+                </div>
+                <div class="col-lg-2">
+                    <div class="col-12"><button type="button" class="btn btn-link btn-link-footer" data-toggle="modal" data-bs-toggle="modal" data-target="#MisionVision" data-bs-target="#MisionVision">Misión y Visión</button></div>
+                    <div class="col-12"><button type="button" class="btn btn-link btn-link-footer" data-toggle="modal" data-bs-toggle="modal" data-target="#PerfProf" data-bs-target="#PerfProf">Perfil Profesional</button></div>
+                    <div class="col-12"><button type="button" class="btn btn-link btn-link-footer" data-toggle="modal" data-bs-toggle="modal" data-target="#ValsUDB" data-bs-target="#ValsUDB">Valores UDB</button></div>
+
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <img src="Logos.png" class="img-fluid" />
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <div class="container-fluid text-center footer-udb p-4">
+        <h6>
+            © 2008 - 2023
+            Departamento de Sistemas Informáticos
+        </h6>
+        <h6>Universidad Don Bosco</h6>
+        <br />
+    </div>
+
+
+
+
+
+
+    <!--Modal mensaje UTL-->
+    <div class="modal fade text-start" tabindex="-1" role="dialog" id="modalMensajeUTL">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="" id="tipoMensajeUTL" style="min-width: 60%;">
+                <div class="row">
+                    <div class="col-10">
+                        <h5 class="alert-heading mb-0">
+                            <strong>
+                                <label id="cabeceraMensajeUTL">_</label>
+                            </strong>
+                        </h5>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                <hr class="mb-2 mt-1" />
+                <div class="mt-2" id="textoMensajeUTL">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal mensaje-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalMensaje">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="alert alert-danger" id="tipoMensaje">
+                <div class="row">
+                    <div class="col-10">
+                        <h5 class="alert-heading">
+                            <strong>
+                                <label id="cabeceraMensaje">_</label>
+                            </strong>
+                        </h5>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                <hr />
+                <p>
+                    <span id="textoMensaje"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" tabindex="-1" id="modalSessionTimeoutWarning">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Advertencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tu sesión expirara en 5 minutos debido a inactividad.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-udb" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="modalSessionTimeout">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Advertencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tu sesión ha expirado.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-udb" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal sesión duplicada -->
+    <div class="modal fade" id="modalSesion" tabindex="-1" role="dialog" aria-labelledby="modalSesionTitulo" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSesionTitulo">Sesión duplicada</h5>
+                </div>
+                <div class="modal-body">
+                    Ha iniciado sesión desde otra computadora o navegador. Haz clic en <span class="fw-bold">Usar aquí</span> para seguir usando el portal de estudiantes desde esta ventana.
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-aceptar-udb" id="btnUsarAqui">Usar aquí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="MisionVision" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Misión y Visión</h5>
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://admacad.udb.edu.sv/Recursos/imagenes/misionvision.jpg" class="img-fluid" />
+
+                    <h4>Misión</h4>
+                    <p class="small text-justify">Somos una institución de Educación Superior con carisma salesiano dedicada a la formación integral de la persona humana, por medio de la investigación, la ciencia, la cultura, la tecnología, la innovación y el compromiso con la comunidad para la construcción de una sociedad libre, justa y solidaria.</p>
+                    <h4>Visión</h4>
+                    <p class="small text-justify">Una universidad salesiana, líder a nivel nacional y referente a nivel regional por su modelo educativo; reconocida por la innovación curricular; por el desarrollo profesional y la internacionalización de sus estudiantes, educadores y personal de gestión; por la ejecución de proyectos de investigación, desarrollo e innovación; por sus publicaciones de impacto; por sus programas de grado y postgrado acreditados internacionalmente; por sus programas a distancia únicos e innovadores; por el mejoramiento continuo de la calidad y por la gestión de sus recursos físicos, tecnológicos y financieros para la sostenibilidad de la institución.</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-udb" data-dismiss="modal" data-bs-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="PerfProf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Perfil Profesional</h5>
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://admacad.udb.edu.sv/Recursos/imagenes/perfiludb.jpg" class="img-fluid" />
+                    <br />
+                    <b>Competencias personales (aprender a ser)</b>
+
+                    <ul class="small text-justify">
+                        <li>Posee una sólida y definida identidad personal: es una persona madura, conciente de su dignidad, del valor y responsabilidad inherentes a su vida, a su naturaleza racional, libre y trascendente.</li>
+                        <li>Tiene un auto concepto equilibrado de sí mismo en todas sus dimensiones: racional, psicológica y emocional; es conciente y de sus limitaciones. Mantiene una visión positiva y optimista de sí mismo, de las demás personas y de la historia."</li>
+                        <li>"Manifiesta apertura de los valores y posee una conciencia ética que le orienta y posibilita la formulación de un proyecto de vida, personal profesional y social.</li>
+                    </ul>
+                    <b>Competencia cognitivas (aprender a aprender)</b>
+                    <ul class="small text-justify">
+                        <li>Manifiesta apertura ala verdad científica, filosófica y religiosa.</li>
+                        <li>Posee una visión global del mundo y de la sociedad en que vive.</li>
+                        <li>Es capaz de ampliar y gestionar cooperativamente sus procesos de aprendizaje y de seguir formándose constantemente durante su vida.</li>
+                        <li>Es crítico, creativo y flexible en el desarrollo de nuevas respuestas a los desafíos que le plantea el ambiente natural y humano.</li>
+                    </ul>
+                    <b>Competencias productivas (aprender a hacer)</b>
+                    <ul class="small text-justify">
+                        <li>Está profesional o técnicamente capacitado en su campo de formación. Posee habilidades básicas especiales y técnicas.</li>
+                        <li>Es capaz de integrar conocimientos teórico y habilidades prácticas, de aplicar la metodología investigativa a la búsqueda de soluciones a los problemas en las áreas de su desempeño laboral y profesional.</li>
+                        <li>Evidencia un espíritu emprendedor, manifiesta capacidad de iniciativa, de planificación y de una gestión de calidad de los procesos humanos y productos. Posee un elevado sentido de trabajo y de la responsabilidad social que de él deriva.</li>
+                    </ul>
+
+                    <b>Competencias sociales (aprender a convivir)</b>
+                    <ul class="small text-justify">
+                        <li>Es capaz de establecer relaciones humanas maduras, de integrarse positivamente a su entorno educativo, laboral o social de trabajo en equipo en torno a proyectos compartidos.</li>
+                        <li>Se muestra socialmente sensible, honesto y solidario frente a la realidad del país, particularmente hacia la condición de los jóvenes más pobres.</li>
+                        <li>Es conciente de sus responsabilidades democráticas, dialoga y participa en la definición y realización del bien común en su comunidad y en la nación.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-udb" data-dismiss="modal" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                <hr class="mb-2 mt-1" />
+                <div class="mt-2" id="textoMensajeUTL">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ValsUDB" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Valores</h5>
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://admacad.udb.edu.sv/Recursos/imagenes/valoresudb.jpg" class="img-fluid" />
+                    <h6><b>VERDAD</b></h6>
+                    <p class="small text-justify">Es la razón de nuestra labor docente, de investigación y de proyección social, que busca la verdad mediante la rigurosidad cientíca y los valores cristianos.</p>
+                    <h6><b>INTEGRIDAD</b></h6>
+                    <p class=" small text-justify">Promovemos la dignidad de toda persona humana, hombre y mujer, a través de una educación y un estilo de relaciones que garantice la integralidad de su desarrollo personal y social.</p>
+                    <h6><b>SOLIDARIDAD</b></h6>
+                    <p class="small text-justify">Formamos personas que vivan comprometidas con la justicia para hacer una sociedad más solidaria y humana.</p>
+                    <h6><b>ESPIRITUALIDAD</b></h6>
+                    <p class="small text-justify">Compartimos una visión del mundo y de la persona en sintonía con el Evangelio de Cristo.</p>
+                    <h6><b>RAZÓN</b></h6>
+                    <p class="small text-justify">La disponibilidad al diálogo, a la empatía; la educación al sentido crítico, a pensar con libertad, al descubrimiento y adhesión a los valores éticos, a la formación de la conciencia moral, para la construcción de la sociedad.</p>
+                    <h6><b>AMABILIDAD</b></h6>
+                    <p class="small text-justify">Una experiencia comunitaria basada en la presencia cálida y con espíritu de familia.</p>
+                    <h6><b>RESPONSABILIDAD</b></h6>
+                    <p class="small text-justify">Sinergia y adhesión a la propuesta educativo-pastoral de la Universidad, desde la diversidad de la Comunidad Académica, para garantizar el alcance de los resultados mediante el trabajo y la innovación</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-udb" data-dismiss="modal" data-bs-dismiss="modal">Cerrar</button>
+
+                </div>
+                <hr />
+                <p>
+                    <span id="textoMensaje"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none;" role="status" aria-hidden="true" id="loader">
+
+        <div class="progress-udb">
+            <div>
+                <img src="https://admacad.udb.edu.sv/Recursos/imagenes/DonBosco.gif" />
+            </div>
+            <div class="progress-container">
+                <div class="progress-herz">
+                    <div class="progress-bar-udb">
+                        <div class="progress-shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalNotificaciones" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-notificaciones" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title">Notificaciones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="btn-group" role="group" style="width: 200px">
+                    <button id="btnNotificacionRecibido" type="button" class="btn btn-eliminar-udb" onclick="activiarTab(1)">Recibidos</button>
+                    <button id="btnNotificacionPendiente" type="button" class="btn btn-outline-warning" onclick="activiarTab(2)">Pendientes</button>
+                </div>
+                <div class="table-responsive" id="tRecibidos">
+                    <table id="tNotificacionesRM" class="table table-udb table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 150px">Fecha</th>
+                                <th style="width: 100px">ID</th>
+                                <th>Tipo</th>
+                                <th>Mensaje</th>
+                                <th>Titular</th>
+                                <th style="width: 150px" align="center">Estado</th>
+                                <th style="width: 50px" align="center">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tBodyR"></tbody>
+                    </table>
+                </div>
+                <div class="table-responsive" id="tPendientes" style="display: none;">
+                    <table id="tNotificacionesPM" class="table table-udb table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 150px">Fecha</th>
+                                <th style="width: 100px">ID</th>
+                                <th>Tipo</th>
+                                <th>Mensaje</th>
+                                <th>Titular</th>
+                                <th style="width: 150px" align="center">Estado</th>
+                                <th style="width: 50px" align="center">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tBodyP"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="/EstudiantesPlus/FLWNotificaciones" class="btn btn-aceptar-udb">Ver todas</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+<form action="/EstudiantesPlus/Expediente" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="l6w1cGkuF-0I6W1ol-O4oELkE1GkCd0hXpV32OC7YuorcJrBsSONp-RcvJT0E-GB99FelDUfI0cOwqWSjA_qdzLJP7c1" /></form>
+
+
+    
+
+<div class="offcanvas offcanvas-end" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalConfirmarEliminarCarrito" tabindex="-1" role="dialog" aria-labelledby="modalConfirmarEliminarCarritoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalConfirmarEliminarCarritoLabel">Eliminar Item Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input id="idItemCarrito" name="id" type="hidden" value="-1" />
+                <div class="text-center">
+                    ¿Está seguro que desea eliminar el item seleccionado?
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="submit" class="btn btn-aceptar-udb" id="BTNEliminarItemCarrito">Aceptar</button>
+                <button type="button" class="btn btn-cancelar-udb" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://admacad.udb.edu.sv/Recursos/js/init.js"></script>
+    <div class="modal fade" id="modalExtenderSesion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" arialabelledby="modalExtenderSesionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title"><b>Advertencia</b></h5>
+                    <href type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></href>
+                </div>
+                <div class="modal-body">
+                    Su sesión expirara en: <b id="session_countdown"></b>
+                    <br />
+                    ¿Desea extender la sesión?
+                </div>
+                <div class="modal-footer">
+                    <button id="BTNExtenderAuth" type="button" class="btn btn-aceptar-udb">Extender Sesión</button>
+                    <button type="button" class="btn btn-cancelar-udb" data-bs-dismiss="modal">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#footer-udb-logos').load('https://admacad.udb.edu.sv/Recursos/html/footer-login.html');
+            $(".chosen-select").chosen({ width: '100%', no_results_text: "No se encontraron resultados!", placeholder_text_multiple: "Seleccione al menos una opción" });
+            $(".chosen-select-modal").chosen({
+                width: '100%',
+                no_results_text: 'No se encontraron resultados!',
+                placeholder_text_multiple: "Seleccione al menos una opción"
+            });
+        });
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+        const getToken = async () => {
+            var form = $('#__AjaxAntiForgeryForm');
+            var token = $('input[name="__RequestVerificationToken"]', form).val();
+            return token;
+        }
+    </script>
+
+    <script type="text/javascript">
+
+    const mConfirmarEliminarCarrito = document.getElementById('modalConfirmarEliminarCarrito');
+    let ModalConfirmarEliminarCarrito = null;
+    var eliminarItemCarritoAfter = async function (objeto) { }; //Metodo dinamico que se dispara tras eliminar un item del carrito
+
+    if (mConfirmarEliminarCarrito) {
+        ModalConfirmarEliminarCarrito = new bootstrap.Modal(mConfirmarEliminarCarrito);
+    }
+
+    /*Eventos */    
+    const myOffcanvas = document.getElementById('offcanvasCarrito')
+    myOffcanvas.addEventListener('show.bs.offcanvas', function () {
+        procesoMostrarDetalleCarrito();
+    })
+
+    const myModalEl = document.getElementById('modalConfirmarEliminarCarrito')
+    myModalEl.addEventListener('hidden.bs.modal', function (event) {
+        setTimeout(function () {
+            var myOffcanvas = document.getElementById('offcanvasCarrito');
+            var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+            bsOffcanvas.show();
+        }, 100);
+    })
+
+    $("#BTNEliminarItemCarrito").click(function () {
+        const id = $("#idItemCarrito").val();
+        metodoEliminarItemCarrito(id);
+        ModalConfirmarEliminarCarrito.hide();
+    });
+
+    /*Metodos*/
+
+    const eliminarItemCarrito = (id, eliminarSinConfirmar) => {
+        if (eliminarSinConfirmar == true) {
+            metodoEliminarItemCarrito(id);
+        } else {
+            $("#idItemCarrito").val(id);
+            ModalConfirmarEliminarCarrito.show();
+            
+        }
+    }
+
+    const metodoEliminarItemCarrito = (id) => {
+        $("#loader").show();
+        procesoEliminarItemCarrito(id)
+            .then(() => $("#loader").hide());
+    }
+
+    /*Proceso */
+    const procesoMostrarCantidadCarrito = async () => {
+        const objeto = await peticionCargarCantidadCarrito();
+        const carga = await cargarCantidadCarrito(objeto);
+        return carga;
+    }
+
+    const procesoMostrarDetalleCarrito = async () => {
+        const html = '<div class="d-flex justify-content-center mt-5"><div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div></div><br/><h4 class="text-center text-primary">Cargando...</h4>';
+        $("#offcanvasCarrito").html(html);
+        const objeto = await peticionCargarDetalleCarrito();
+        const carga = await cargarDetalleCarrito(objeto);
+        return carga;
+    }
+
+    const procesoEliminarItemCarrito = async (id) => {
+        const objeto = await peticionEliminarItemCarrito(id);
+        const carga = await cargarEliminarItemCarrito(objeto);
+        await eliminarItemCarritoAfter(objeto);
+        return carga;
+    }
+
+    /*Peticiones */
+    const peticionCargarCantidadCarrito = async () => {
+        //obtentemos los datos
+        const url = '/EstudiantesPlus/Carrito/ListarCantidadEnCarrito';
+        const token = await getToken();
+        //realizamos las peticiones
+        const obj = await AJAXP({ URL: url, TYPE: 'POST', token: token });
+        return obj;
+    }
+
+    const peticionCargarDetalleCarrito = async () => {
+        //obtentemos los datos
+        const url = '/EstudiantesPlus/Carrito/Listar';
+        const token = await getToken();
+        //realizamos las peticiones
+        const obj = await AJAXP({ URL: url, TYPE: 'POST', token: token });
+        return obj;
+    }
+
+    const peticionEliminarItemCarrito = async (id) => {
+        //obtentemos los datos
+        const url = '/EstudiantesPlus/Carrito/Eliminar';
+        const data = JSON.stringify({ 'id': id });
+        const token = await getToken();
+        //realizamos las peticiones
+        const obj = await AJAXP({ URL: url, DATA: data, TYPE: 'POST', token: token });
+        return obj;
+    }
+
+    /*Carga */
+    const cargarCantidadCarrito = async (response) => {
+        const { success, mensaje, cantidad } = response;
+        if (success === true) {
+            if (cantidad === "-1" || cantidad === "0") {
+                $("#tbCantCarrito").html('');
+            } else {
+                $("#tbCantCarrito").html(cantidad);
+            }
+        } else {
+            $("#tbCantCarrito").html('');
+            console.log(mensaje.Mensaje);
+        }
+    }
+
+    const cargarDetalleCarrito = async (response) => {
+        const { success, mensaje, view } = response;
+        if (success === true) {
+            $("#offcanvasCarrito").html(view);
+        } else {
+            $("#offcanvasCarrito").html('');
+            console.log(mensaje.Mensaje);
+        }
+    }
+
+    const cargarEliminarItemCarrito = async (response) => {
+        const { success, mensaje, total, cantidad, listaIds, lista } = response;
+        if (success === true) {
+            //Quito todos los pagos eliminados
+            listaIds.forEach(element => $("#" + element).remove());
+            lista.forEach(element => cambiarEnlace(element));
+
+            //Actualizo el monto
+            $("#lbTotalCarrito").html('Total: $' + total.toFixed(2));
+
+            if (total <= 0) {
+                $("#offCanvasHeaderCarrito1").html('');
+                $("#offCanvasHeaderCarrito2").html('');
+                $('#offCanvasBodyCarrito').html('<div class="alert alert-info"><h4>Tu carrito esta vacío.</h4><h6>Aún no se han agregado servicios y/o mensualidades al carrito de pagos.</h6></div>');
+            }
+
+            //Actualizo el total del carrito de pagos
+            if (cantidad === "-1" || cantidad === "0") {
+                $("#tbCantCarrito").html('');
+            } else {
+                $("#tbCantCarrito").html(cantidad);
+            }
+
+            //Verifica en que vista se tiene que realizar la recarga de registros
+            if (VistaCarritoEstudiantePlus == "Pagos") {
+                //Vista de Pagos [VENPagos]
+                ListarPagos();
+            } else if (VistaCarritoEstudiantePlus == "Retiro") {
+                //Vista de Retiro de Asignaturas [RETRetiroAsignatura]
+                ListarSolicitudes();
+            }
+        } else {            
+            console.log(mensaje.Mensaje);
+        }
+    }
+
+    const cambiarEnlace = (objeto) => {
+        const funcion = 'eliminarItemCarrito(' + objeto.Id + ', ' + objeto.EliminarSinConfirmar + ')';
+        $("#" + objeto.Id).find('a').first().removeAttr('onclick').attr('onclick', funcion);
+    }
+
+</script>
+
+
+        <script type="text/javascript" charset="utf-8">
+                $(function() {
+                    try
+                    {
+                        var sesion = $.connection.sesionHub;
+
+                        sesion.client.recibirLogin = function(login) {
+                            var actualLogin = 'SG231572';
+                            if (login === actualLogin)
+                            {
+                                $("#modalSesion").modal('show');
+                            }
+                        }
+
+                        $.connection.hub.start().done(function() {
+                            sesion.server.sendLogin('SG231572');
+
+                            $('#btnUsarAqui').click(function() {
+                                sesion.server.sendLogin('SG231572');
+                                $("#modalSesion").modal('hide');
+                            });
+                        });
+                    }
+                    catch (error)
+                    {
+                        console.log(error);
+                    }
+                });
+        </script>
+
+    <script type="text/javascript" charset="utf-8">
+
+        window.onload = function () {
+            var urlBase = '/EstudiantesPlus/';
+            var urlNotificaciones = '/EstudiantesPlus/FLWNotificaciones/Badges';
+            var urlNotificacionesNoVistas = '/EstudiantesPlus/FLWNotificaciones/ListarNoVistas';
+            var urlNotificacionesNoEjecutadas = '/EstudiantesPlus/FLWNotificaciones/ListarNoEjecutadas';
+            inicializar(urlBase, urlNotificaciones, urlNotificacionesNoVistas, urlNotificacionesNoEjecutadas);
+            cargarMensajeInicial();
+            procesoMostrarCantidadCarrito();
+        }
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+        function cargarMensajeInicial() {
+
+
+
+
+        }
+    </script>
+
+    
+    <script type="text/javascript">
+
+    $('[data-bs-toggle="tooltip"]').on('click', function () {
+        $(this).tooltip('dispose');
+    });
+
+    const ActualizarExpediente = (Carrera, Plan) => {
+        $('#loader').show();
+        PeticionExpediente(Carrera, Plan).catch((err) => {
+            $("#loader").hide();
+            mostrarMensajeUTL({ Mensaje: err, TipoMensaje: 200101 });
+        });
+    }
+
+    const PeticionExpediente = async (Carrera, Plan) => {
+        const route = '/EstudiantesPlus/Expediente/Ver';
+        const token = await getToken();
+        const DATA = JSON.stringify({
+            'Carrera': Carrera,
+            'Plan': Plan
+        });
+
+        const response = await AJAXP({
+            URL: route,
+            DATA: DATA,
+            TYPE: 'POST',
+            token: token
+        });
+
+        return await CargarExpediente(response, Carrera, Plan);
+    }
+
+    const CargarExpediente = async (response, Carrera, Plan) => {
+        $("#loader").hide();
+        if (response.success === true) {
+
+            const { viewExpediente, viewProcesoGraduacion, viewRequisitos, viewConsolidado } = response;
+
+            let filaNueva = document.querySelector(`[data-carrera="${Carrera}"][data-plan="${Plan}"]`);            
+            let listaCarreras = document.getElementsByClassName("carrera");
+
+            document.getElementById('divExpediente').innerHTML = viewExpediente;
+            document.getElementById('divProcesoGraduacion').innerHTML = viewProcesoGraduacion;
+            document.getElementById('divRequisitos').innerHTML = viewRequisitos;
+            document.getElementById('divConsolidadoAsignaturas').innerHTML = viewConsolidado;
+
+            [].forEach.call(listaCarreras, function (carrera) {
+                carrera.classList.remove("active");
+            })
+
+            if (filaNueva) {
+                filaNueva.classList.add("active");
+            }
+
+            inicializarControlesBS5();            
+
+        } else {
+            mostrarMensajeUTL(response.mensaje);
+        }
+    }
+
+    $(document).ready(function () {
+        let sectionPos = window.location.href.lastIndexOf("#");
+        if (sectionPos > 0) {
+            const section = window.location.href.substring(sectionPos + 1).trim();
+            setTimeout(function () {
+                if (section.length > 0) {
+                    $('html, body').animate({
+                        scrollTop: $($('*[data-section="' + section + '"]')).offset().top - 130
+                    }, 400);
+                    return false;
+                }
+            }, 500);
+            
+        }
+    });
+</script>
+
+
+
+    <script type="text/javascript">
+        inicializarPopoverBS5();
+        inicializarTooltipBS5();
+
+        $(document).on('click', 'button[data-bs-toggle="tooltip"], a[data-bs-toggle="tooltip"]', function () {
+            $(this).blur();
+            $(this).tooltip('hide');
+        });
+    </script>
+</body>
+</html>
